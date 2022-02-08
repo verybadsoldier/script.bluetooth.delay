@@ -1,1 +1,14 @@
+1.1.0
+Now working with these skins:
+-Ace 2
+-Aeon MQ 8
+-Aeon Nox: SILVO
+-Aeon Tajo
+-fTV
+-Madnox
+-Pellucid
+-Quartz
+-Xperience1080
+-Mimic LR
+
 1.0.0 Initial Release

@@ -19,7 +19,7 @@ if firstRun == "false":
 
 d1 = Addon.getSetting('Device1')
 d2 = Addon.getSetting('Device2')
-script = xbmc.translatePath(os.path.join('special://home/addons/script.bluetooth.delay/AudioDelay.py'))
+
 
 if d2 == d1:
 	xbmcaddon.Addon().openSettings()

@@ -18,6 +18,40 @@ line1 = Addon.getSetting('line1')
 line2 = Addon.getSetting('line2')
 t = 1000
 
+def skin1():
+        xbmc.executebuiltin('SetFocus(-73)')
+        xbmc.executebuiltin("Action(select)")
+        xbmc.executebuiltin('SetFocus(11)')
+        xbmc.executebuiltin("Action(select)", wait=True)
+
+def skin2():
+        xbmc.executebuiltin('SetFocus(-74)')
+        xbmc.executebuiltin("Action(select)")
+        xbmc.executebuiltin('SetFocus(11)')
+        xbmc.executebuiltin("Action(select)", wait=True)
+
+
+if "ace2" in xbmc.getSkinDir():
+    skin1 = skin2
+elif "aeon.nox.silvo" in xbmc.getSkinDir():
+    skin1 = skin2
+elif "aeon.tajo" in xbmc.getSkinDir():
+    skin1 = skin2
+elif "aeonmq8" in xbmc.getSkinDir():
+    skin1 = skin2       
+elif "ftv" in xbmc.getSkinDir():
+    skin1 = skin2
+elif "madnox" in xbmc.getSkinDir():
+    skin1 = skin2
+elif "pellucid" in xbmc.getSkinDir():
+    skin1 = skin2
+elif "quartz" in xbmc.getSkinDir():
+     skin1 = skin2
+elif "xperience1080" in xbmc.getSkinDir():
+    skin1 = skin2
+elif "mimic.lr" in xbmc.getSkinDir():
+    skin1 = skin2
+    
 def main():
 
     if (xbmc.getCondVisibility('Player.HasMedia') == False):
@@ -27,13 +61,8 @@ def main():
 
     check = xbmc.translatePath('special://profile/guisettings.xml')
     time1 = os.path.getmtime(check)
-
     xbmc.executebuiltin('ActivateWindow(osdaudiosettings)')
-    xbmc.executebuiltin('SetFocus(-73)')
-    xbmc.executebuiltin("Action(select)")
-    xbmc.executebuiltin('SetFocus(11)')
-    xbmc.executebuiltin("Action(select)", wait=True)
-
+    skin1()
     time2 = os.path.getmtime(check)
     while time2 == time1:
         time.sleep(0.01)
@@ -69,10 +98,7 @@ def main():
             if float(d2) < float(d1):
                 xbmc.executebuiltin("Action(AudioDelayMinus)")
         time3 = os.path.getmtime(check)
-        xbmc.executebuiltin('SetFocus(-73)')
-        xbmc.executebuiltin("Action(select)")
-        xbmc.executebuiltin('SetFocus(11)')
-        xbmc.executebuiltin("Action(select)", wait=True)
+        skin1()
         time.sleep(s)
         xbmc.executebuiltin("Action(close)", wait=True)
         time4 = os.path.getmtime(check)
@@ -99,10 +125,7 @@ def main():
             if float(d1) < float(d2):
                 xbmc.executebuiltin("Action(AudioDelayMinus)")
         time3 = os.path.getmtime(check)
-        xbmc.executebuiltin('SetFocus(-73)')
-        xbmc.executebuiltin("Action(select)")
-        xbmc.executebuiltin('SetFocus(11)')
-        xbmc.executebuiltin("Action(select)", wait=True)
+        skin1()
         time.sleep(s)
         xbmc.executebuiltin("Action(close)", wait=True)
         time4 = os.path.getmtime(check)
@@ -139,10 +162,7 @@ def main():
             if ok == True:
                 xbmc.executebuiltin('PlayerControl(stop)')
                 xbmc.executebuiltin('ActivateWindow(osdaudiosettings)')
-                xbmc.executebuiltin('SetFocus(-73)')
-                xbmc.executebuiltin("Action(select)")
-                xbmc.executebuiltin('SetFocus(11)')
-                xbmc.executebuiltin("Action(select)", wait=True)
+                skin1()
                 time.sleep(s)
                 xbmc.executebuiltin("Action(close)", wait=True)
                 sourcesXML = minidom.parse(xbmc.translatePath('special://profile/guisettings.xml'))
@@ -164,10 +184,7 @@ def main():
                 for x in range(y):
                     xbmc.executebuiltin("Action(AudioDelayPlus)")
         time3 = os.path.getmtime(check)
-        xbmc.executebuiltin('SetFocus(-73)')
-        xbmc.executebuiltin("Action(select)")
-        xbmc.executebuiltin('SetFocus(11)')
-        xbmc.executebuiltin("Action(select)", wait=True)
+        skin1()
         time.sleep(s)
         xbmc.executebuiltin("Action(close)", wait=True)
         time4 = os.path.getmtime(check)
